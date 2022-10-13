@@ -1,40 +1,20 @@
-<div class='container'>
-  <main class='d-flex justify-content-center'>
-    <div class='card' id='login-box'>
-      <div class='card-body'>
-        <form>
-          <h1 class='mt-3 mb-5'>Login</h1>
-          <div class='mb-3' id='email-col'>
-            <input
-              type='email'
-              class='form-control'
-              placeholder='Email address'
-              id='userEmail'
-              name='userEmail'
-              aria-describedby='emailHelp'
-            />
-            <div id='emailHelp' class='form-text'>We'll never share your email
-              with anyone else.</div>
-          </div>
-          <div class='mt-4 mb-4' id='password-col'>
-            <input
-              type='password'
-              class='form-control'
-              placeholder='Password'
-              name='userPassword'
-              id='userPassword'
-            />
-          </div>
-          <button
-            type='submit'
-            class='btn btn-primary'
-            style='opacity: 80%'
-          >Sign in</button>
-        </form>
-      </div>
+<div class='container py-4'>
+  <header class='pb-3 mb-4 border-bottom'>
+    <a
+      href='/index'
+      class='d-flex align-items-center text-white text-decoration-none'
+    >
+      <i class='fa-solid fa-plane-departure fa-xl' style=''></i>
+      <span class='fs-3 ms-3'>Buenos Dias</span>
+    </a>
 
+  </header>
+  <div class='p-5 bg-light rounded-3'>
+    <div class='container-fluid py-5'>
+      <h1 class='display-5 fw-bold'>Welcome back {{userName}}!</h1>
+      <p class='col-sm-8'>
+        Start exploring what's new today!
+      </p>
     </div>
-
-  </main>
-
+  </div>
 </div>

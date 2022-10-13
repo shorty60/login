@@ -1,28 +1,20 @@
 const express = require('express')
 const { engine } = require('express-handlebars')
-const mongoose = require('mongoose')
+const cookieParser = require('cookie-parser')
 
-mongoose.connect(process.env.MONGODB_URI)
+const routes = require('./routes')
 
-const db = mongoose.connection
-db.on('error', () => {
-  console.log('MongoDB connection fail!')
-})
-
-db.once('open', () => {
-  console.log('MongoDB connected.')
-})
-
+require('./config/mongoose')
 const app = express()
 const port = 3000
 
 app.engine('hbs', engine({ defaultLayout: 'main', extname: '.hbs' }))
 app.set('view engine', 'hbs')
 
+app.use(express.urlencoded({ extended: true }))
+app.use(cookieParser())
 app.use(express.static('public'))
-app.get('/', (req, res) => {
-  res.render('index')
-})
+app.use(routes)
 
 app.listen(port, () => {
   console.log(`Express is listening on http://localhost:${port}`)

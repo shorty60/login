@@ -1,0 +1,18 @@
+<div class='p-5 mt-5 bg-light rounded-1'>
+  <div class='container-fluid'>
+    <h1 class='display-5 mb-5 fw-bold'>Sorry! Something error</h1>
+    <i class='fa-solid fa-person-digging fa-10x mb-3'></i>
+    <p class='col-md-8 fs-5'>There is something error.</p>
+
+    {{#if badRequest}}
+
+      <h3>Your {{error.param}} is invalid!</h3>
+      <p>Your input is: <strong>{{error.value}}</strong></p>
+      <p>Reason: {{error.msg}}</p>
+
+      <a class='btn btn-secondary btn-lg' href='{{Origin}}'>Go Back</a>
+
+    {{/if}}
+
+  </div>
+</div>

@@ -12,3 +12,13 @@ body {
   margin-bottom: auto;
   text-align: center;
 }
+#liveAlertPlaceholder {
+  display: flex;
+  justify-content: center;
+}
+
+#alert-top {
+  margin-top: 10rem;
+  position: fixed;
+  z-index: 100;
+}

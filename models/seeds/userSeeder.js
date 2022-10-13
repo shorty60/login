@@ -1,5 +1,6 @@
 const mongoose = require('mongoose')
 const User = require('../user')
+const db = require('../../config/mongoose')
 
 const users = [
   {
@@ -29,12 +30,8 @@ const users = [
   },
 ]
 
-mongoose.connect(process.env.MONGODB_URI)
-const db = mongoose.connection
-
-db.on('error', () => console.log('MongoDB connection failed.'))
 db.once('open', () => {
-  console.log('MongoDB connected, start writing seeds...')
+  console.log('Start writing seeds...')
   return User.insertMany(users)
     .then(() => {
       console.log('Seeds Written.')

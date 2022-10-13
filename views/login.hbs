@@ -1,0 +1,81 @@
+{{!使用者帳密不對，跳出提醒}}
+
+<header>
+
+  {{#if notCorrect}}
+    <div id='liveAlertPlaceholder'>
+      <div
+        class='alert alert-danger alert-dissmissiable'
+        role='alert'
+        id='alert-top'
+      >
+        <div style='display: inline;'>使用者信箱或密碼不符合</div>
+        <button
+          type='button'
+          class='btn-close ms-3'
+          data-bs-dismiss='alert'
+          aria-label='Close'
+        ></button>
+      </div>
+    </div>
+
+  {{/if}}
+</header>
+
+<div class='container'>
+  <main class='d-flex justify-content-center'>
+    <div class='card' id='login-box'>
+      <div class='card-body'>
+        <form action='/login' method='POST' novalidate>
+          <h1 class='mt-3 mb-5'>Login</h1>
+          <div class='mb-3' id='email-col'>
+            <div id='emailHelp' class='form-text'>We'll never share your email
+              with anyone else.</div>
+            <input
+              type='email'
+              class='form-control'
+              placeholder='Email address'
+              id='userEmail'
+              name='userEmail'
+              aria-describedby='emailHelp'
+              required
+              autofocus
+            />
+            <div class='valid-feedback'>
+              Looks Good!
+            </div>
+            <div class='invalid-feedback'>
+              email address should include "@" and "."
+            </div>
+          </div>
+          <div class='mt-4 mb-4' id='password-col'>
+            <input
+              type='password'
+              class='form-control'
+              placeholder='Password'
+              name='userPassword'
+              minlength='6'
+              id='userPassword'
+              required
+              autofocus
+            />
+            <div class='valid-feedback'>
+              Looks Good!
+            </div>
+            <div class='invalid-feedback'>
+              length is at least 6 characters
+            </div>
+          </div>
+          <button
+            type='submit'
+            class='btn btn-primary'
+            style='opacity: 80%'
+            id='submit-button'
+          >Sign in</button>
+        </form>
+      </div>
+    </div>
+  </main>
+</div>
+
+<script src='/javascripts/main.js'></script>
