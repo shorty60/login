@@ -12,15 +12,15 @@ Users can login and start our service.
 
 #### Login
 
-![Home]()
+![Login](https://github.com/shorty60/login/blob/main/public/images/login.jpg)
 
 #### Home
 
-![Result]()
+![Home](https://github.com/shorty60/login/blob/main/public/images/home.jpg)
 
 #### Error
 
-![Error]()
+![Error](https://github.com/shorty60/login/blob/main/public/images/error.jpg)
 
 ## Getting Started
 
