@@ -9,17 +9,17 @@ db.on('error', () => {
   console.log('MongoDB connection fail!')
 })
 
-db.once('open', ()=>{
+db.once('open', () => {
   console.log('MongoDB connected.')
 })
 
 const app = express()
 const port = 3000
 
-
-app.engine('hbs', engine({defaultLayout: 'main', extname: '.hbs'}))
+app.engine('hbs', engine({ defaultLayout: 'main', extname: '.hbs' }))
 app.set('view engine', 'hbs')
 
+app.use(express.static('public'))
 app.get('/', (req, res) => {
   res.render('index')
 })
