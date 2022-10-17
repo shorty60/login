@@ -6,7 +6,7 @@ Users can login and start our service.
 
 - Users can login.
 - If users type wrong email or password, we'll notice them.
-
+- Users can keep login status once they have been verified.
 
 ## Screen Photos
 
@@ -98,6 +98,7 @@ in your terminal.
 - [Mongoose](https://mongoosejs.com/) - MongoDB ODM v6.6.5
 - [express-validator](https://express-validator.github.io/docs/) - server side validation v6.14.2
 - [cookie-parser](https://www.npmjs.com/package/cookie-parser) -v1.4.6
+- [crypto-js](https://www.npmjs.com/package/crypto-js) -v4.1.1
 
 ## Authors
 
