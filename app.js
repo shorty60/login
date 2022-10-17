@@ -12,7 +12,7 @@ app.engine('hbs', engine({ defaultLayout: 'main', extname: '.hbs' }))
 app.set('view engine', 'hbs')
 
 app.use(express.urlencoded({ extended: true }))
-app.use(cookieParser())
+app.use(cookieParser('secretBuenosDiasIndex'))
 app.use(express.static('public'))
 app.use(routes)
 

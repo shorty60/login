@@ -9,7 +9,7 @@ router.get('/', (req, res) => {
 })
 
 router.get('/index', (req, res) => {
-  const sessionID = req.cookies.sessionID
+  const sessionID = req.signedCookies.sessionID
   return Session.findOne({ sessionID: sessionID })
     .then(data => {
       const userEmail = data.userEmail
@@ -26,7 +26,7 @@ router.get('/index', (req, res) => {
 })
 
 router.post('/index', (req, res) => {
-  const sessionID = req.cookies.sessionID
+  const sessionID = req.signedCookies.sessionID
   Session.findOne({ sessionID: sessionID })
     .then(data => {
       if (!data) {

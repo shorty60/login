@@ -10,7 +10,7 @@ const router = express.Router()
 
 // 登入頁面
 router.get('/', (req, res) => {
-  const sessionID = req.cookies.sessionID
+  const sessionID = req.signedCookies.sessionID
   // 沒有session ID，表示還沒登入過
   if (!sessionID) {
     return res.render('login')
@@ -64,7 +64,7 @@ router.post(
       })
       .then(data => {
         const sessionID = data.sessionID // session寫入資料庫後，回傳cookie給使用者
-        res.cookie('sessionID', sessionID)
+        res.cookie('sessionID', sessionID, { signed: true })
         return res.redirect('/index')
       })
       .catch(error => {
