@@ -22,3 +22,7 @@ body {
   position: fixed;
   z-index: 100;
 }
+
+#log-out-button {
+  opacity: 80%;
+}

@@ -15,6 +15,20 @@
       <p class='col-sm-8'>
         Start exploring what's new today!
       </p>
+      <form class='d-flex justify-content-end' action='/index' method='POST'>
+        <input
+          class='form-control'
+          type='hidden'
+          name='sessionID '
+          value='{{sessionID}}'
+        />
+        <button
+          class='btn btn-primary mt-5'
+          id='log-out-button'
+          type='submit'
+        >Log out</button>
+      </form>
+
     </div>
   </div>
 </div>
